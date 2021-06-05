@@ -80,7 +80,7 @@ initial-scale=1">
                 <label>Jabatan</label>
             </div>
             <div class="col-75">
-                <input type="number" name="jabatan" value="{{$dokter->jabatan}}">
+                <input type="text" name="jabatan" value="{{$dokter->jabatan}}">
             </div>
         </div>
         <div class="row">

@@ -21,19 +21,15 @@
     }
     tr:nth-child(even){background-color: #f2f2f2}
     .tambah{
-        background-color: aqua;
-        padding: 8px 16px ;
+        background-color: navajowhite;
+        padding: 10px 10px ;
         text-decoration: dashed;
         margin-bottom: 5px;
     }
     </style>
 </head>
 <body>
-    <h2>Data Dokter</h2>
-    <div>
-    <a class="tambah" href="{{ route('dokter0176.create') }}">Tambah Data</a>
-    </div>
-    
+    <h2>Data Dokter</h2>    
     <div style="overflow-x: auto;">
         <table>
             <thead>
@@ -52,12 +48,19 @@
                     <th>{{$dok->nama}}</th>
                     <th>{{$dok->jabatan}}</th>
                     <th>
-                    <a href="{{ url('/dokter0176/' . $dok->id . '/edit') }}" class="btn btn-xs btn-info pull-right">Edit</a>
+                    ||
+                    <a href="{{ url('dokter0176/' . $dok->id . '/edit') }}" class="btn btn-xs btn-info pull-right">Edit</a>
+                    |||
+                    <a href="{{ url('/dokter0176/' . $dok->id . '/hapus') }}" class="btn btn-xs btn-info pull-right">Hapus</a>
+                    ||
                     </th>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div>
+    <a class="tambah" href="{{ route('dokter0176.create') }}">Tambah Data</a>
     </div>
 </body>
 </html>

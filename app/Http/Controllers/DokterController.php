@@ -71,8 +71,8 @@ class DokterController extends Controller
      */
     public function edit($id)
     {
-        $dok_edit = \App\Models\Dokter::All();
-        return view('edit_dok0176', ['dokter'=>$dok_edit]);
+        $dok_edit = \App\Models\Dokter::find($id);
+        return view('dok_edit0176', ['dokter'=>$dok_edit]);
     }
 
     /**
@@ -84,7 +84,11 @@ class DokterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dok_up = \App\Models\dokter::find($id);
+        $dok_up->nama = $request->get('nama');
+        $dok_up->jabatan = $request->get('jabatan');
+        $dok_up->save();
+        return redirect()->route('dokter0176.index', [$id]);
     }
 
     /**
@@ -95,6 +99,8 @@ class DokterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dok_del = \App\Models\dokter::find($id);
+        $dok_del->delete();
+        return redirect()->route('dokter0176.index');
     }
 }

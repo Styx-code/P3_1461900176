@@ -21,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home0176', [HomeController::class, 'index']);
+Route::get('dokter0176/{id}/hapus', [DokterController::class, 'destroy']);
 Route::resource('dokter0176', DokterController::class);
 Route::resource('pasien0176', PasienController::class);
 Route::resource('user0176', UserController::class);

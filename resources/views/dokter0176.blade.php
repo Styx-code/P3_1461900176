@@ -23,8 +23,26 @@
     .tambah{
         background-color: navajowhite;
         padding: 10px 10px ;
-        text-decoration: dashed;
+        text-decoration: none;
         margin-bottom: 5px;
+    }
+    .tambah:hover{
+        background-color: black;
+        color: #f2f2f2;
+    }
+    .tombol{
+        background-color: mediumorchid;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .tombol:hover{
+        background-color: khaki;
+        color: black;
     }
     </style>
 </head>
@@ -49,9 +67,9 @@
                     <th>{{$dok->jabatan}}</th>
                     <th>
                     ||
-                    <a href="{{ url('dokter0176/' . $dok->id . '/edit') }}" class="btn btn-xs btn-info pull-right">Edit</a>
+                    <a href="{{ url('dokter0176/' . $dok->id . '/edit') }}" class="tombol">Edit</a>
                     |||
-                    <a href="{{ url('/dokter0176/' . $dok->id . '/hapus') }}" class="btn btn-xs btn-info pull-right">Hapus</a>
+                    <a href="{{ url('/dokter0176/' . $dok->id . '/hapus') }}" class="tombol">Hapus</a>
                     ||
                     </th>
                 </tr>
@@ -59,6 +77,7 @@
             </tbody>
         </table>
     </div>
+    <br>
     <div>
     <a class="tambah" href="{{ route('dokter0176.create') }}">Tambah Data</a>
     </div>

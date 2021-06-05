@@ -5,31 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas Kegiatan 3</title>
-    <style>        
+    <style>
         table {
-            border-collapse: collapse;
-            border-spacing: 0;
-            width: 100%;
-            border: 1px solid #ddd;
-        }
-        thead {
-            background-color: #f2f2f2;
-        }
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even){background-color: #f2f2f2}
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    }
+    thead {
+        background-color: #f2f2f2;
+    }
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even){background-color: #f2f2f2}
         .tambah{
-        padding: 8px 16px ;               text-decoration: none;
-        }
-        .tombol{
-            background-color: coral;
-            padding: 10px 10px;
-            width: fit-content;
-            display: inline-block;
-
-        }
+        padding: 8px 16px ;              
+        text-decoration: none;
+    }
+    .tambah{
+        background-color: navajowhite;
+        padding: 10px 10px ;
+        text-decoration: none;
+        margin-bottom: 5px;
+    }
+    .tambah:hover{
+        background-color: black;
+        color: #f2f2f2;
+    }
+    .tombol{
+        text-decoration: none;
+        background-color: mediumorchid;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        
+    }
+    .tombol:hover{
+        background-color: khaki;
+        color: black;
+        text-decoration: none;
+    }
     </style>
 </head>
 <body>
@@ -46,6 +66,9 @@
     </div>
     <div class="tombol">
         <a href="{{url('/kamar0176')}}">Data Kamar</a>
+    </div>
+    <div class="tombol">
+        <a href="{{url('')}}">Filter</a>
     </div>
 </body>
 </html>

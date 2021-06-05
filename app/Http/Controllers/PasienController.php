@@ -18,7 +18,7 @@ class PasienController extends Controller
         $pasien = \App\Models\pasien::All();
         return view('pasien0176', ['pasien'=>$pasien]);
     }
-    public function pasien()
+    public function dokter()
     {
         $pasien = DB::table('pasien')->get();
         return view('pasien0176', ['pasien'=>$pasien]);
@@ -31,7 +31,7 @@ class PasienController extends Controller
      */
     public function create()
     {
-        //
+        return view('tb_pas0176');
     }
 
     /**
@@ -42,7 +42,14 @@ class PasienController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nama = $request ->get('nama');
+        $alamat = $request->get('alamat');
+
+        $save_ps = new \App\Models\pasien;
+        $save_ps->nama = $nama;
+        $save_ps->alamat = $alamat;
+        $save_ps->save();
+        return redirect()->route('pasien0176.index');
     }
 
     /**
@@ -64,7 +71,8 @@ class PasienController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pas_edit = \App\Models\pasien::find($id);
+        return view('pas_edit0176', ['pasien'=>$pas_edit]);
     }
 
     /**
@@ -76,7 +84,11 @@ class PasienController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pas_up = \App\Models\pasien::find($id);
+        $pas_up->nama = $request->get('nama');
+        $pas_up->alamat = $request->get('alamat');
+        $pas_up->save();
+        return redirect()->route('pasien0176.index', [$id]);
     }
 
     /**
@@ -87,6 +99,8 @@ class PasienController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pas_del = \App\Models\pasien::find($id);
+        $pas_del->delete();
+        return redirect()->route('pasien0176.index');
     }
 }

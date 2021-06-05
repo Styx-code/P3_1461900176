@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data User</title>
+    <title>Data Dokter</title>
     <style>
         table {
     border-collapse: collapse;
@@ -21,26 +21,39 @@
     }
     tr:nth-child(even){background-color: #f2f2f2}
     .tambah{
-        background-color: aqua;
-        padding: 8px 16px ;
-        text-decoration: dashed;
+        background-color: navajowhite;
+        padding: 10px 10px ;
+        text-decoration: none;
         margin-bottom: 5px;
+    }
+    .tambah:hover{
+        background-color: black;
+        color: #f2f2f2;
+    }
+    .tombol{
+        background-color: mediumorchid;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .tombol:hover{
+        background-color: khaki;
+        color: black;
     }
     </style>
 </head>
 <body>
-    <h2>Data User</h2>
-    <div>
-        <a href="" class="tambah">Tambah Data</a>
-    </div>
-    
+    <h2>Data Dokter</h2>    
     <div style="overflow-x: auto;">
         <table>
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Username</th>
                     <th>Password</th>
                     <th>Ubah</th>
                 </tr>
@@ -51,16 +64,22 @@
                 <tr>
                     <td>{{$no++}}</td>
                     <th>{{$u->nama}}</th>
-                    <th>{{$u->username}}</th>
                     <th>{{$u->password}}</th>
                     <th>
-                        <button type="submit">edit</button>
-                        <button type="submit">delete</button>
+                    ||
+                    <a href="{{ url('user0176/' . $u->id . '/edit') }}" class="tombol">Edit</a>
+                    |||
+                    <a href="{{ url('/user0176/' . $u->id . '/hapus') }}" class="tombol">Hapus</a>
+                    ||
                     </th>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <br>
+    <div>
+    <a class="tambah" href="{{ route('user0176.create') }}">Tambah Data</a>
     </div>
 </body>
 </html>

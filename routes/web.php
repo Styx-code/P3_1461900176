@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', [HomeController::class, 'index']);
-Route::resource('dokter', DokterController::class);
-Route::resource('pasien', PasienController::class);
-Route::resource('user', UserController::class);
+Route::get('/home0176', [HomeController::class, 'index']);
+Route::resource('dokter0176', DokterController::class);
+Route::resource('pasien0176', PasienController::class);
+Route::resource('user0176', UserController::class);

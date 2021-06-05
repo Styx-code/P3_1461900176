@@ -23,13 +23,28 @@
         .tambah{
         padding: 8px 16px ;               text-decoration: none;
         }
+        .tombol{
+            background-color: coral;
+            padding: 10px 10px;
+            width: fit-content;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
     <h1>Tugas Kegiatan 3</h1>
-    <a href="{{url('/dokter')}}">Data Dokter</a>
-    <a href="{{url('/pasien')}}">Data Pasien</a>
-    <a href="{{url('/user')}}">Data User</a>
-    <a href="{{url('/kamar')}}">Data Kamar</a>
+    <div class="tombol">
+        <a href="{{url('/dokter0176')}}">Data Dokter</a>
+    </div>
+    <div class="tombol">
+        <a href="{{url('/pasien0176')}}">Data Pasien</a>
+    </div>
+    <div class="tombol">
+        <a href="{{url('/user0176')}}">Data User</
+        a>
+    </div>
+    <div class="tombol">
+        <a href="{{url('/kamar0176')}}">Data Kamar</a>
+    </div>
 </body>
 </html>

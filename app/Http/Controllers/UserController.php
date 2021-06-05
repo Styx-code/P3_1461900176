@@ -16,12 +16,12 @@ class UserController extends Controller
     public function index()
     {
         $user = \App\Models\user::All();
-        return view('user', ['user'=>$user]);
+        return view('user0176', ['user'=>$user]);
     }
     public function user()
     {
         $user = DB::table('user')->get();
-        return view('user', ['user'=>$user]);
+        return view('user0176', ['user'=>$user]);
     }
 
     /**

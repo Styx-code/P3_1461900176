@@ -31,7 +31,7 @@
 <body>
     <h2>Data Dokter</h2>
     <div>
-        <a href="" class="tambah">Tambah Data</a>
+    <a class="tambah" href="{{ route('dokter0176.create') }}">Tambah Data</a>
     </div>
     
     <div style="overflow-x: auto;">
@@ -52,8 +52,7 @@
                     <th>{{$dok->nama}}</th>
                     <th>{{$dok->jabatan}}</th>
                     <th>
-                        <button type="submit">edit</button>
-                        <button type="submit">delete</button>
+                    <a href="{{ url('/dokter0176/' . $dok->id . '/edit') }}" class="btn btn-xs btn-info pull-right">Edit</a>
                     </th>
                 </tr>
                 @endforeach

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dokter;
+use App\Models\Dokter;
 use Illuminate\Http\Request;
 use illuminate\Support\Facades\DB;
 
@@ -16,12 +16,12 @@ class DokterController extends Controller
     public function index()
     {
         $dokter = \App\Models\Dokter::All();
-        return view('dokter', ['dokter'=>$dokter]);
+        return view('dokter0176', ['dokter'=>$dokter]);
     }
     public function dokter()
     {
         $dokter = DB::table('dokter')->get();
-        return view('dokter', ['dokter'=>$dokter]);
+        return view('dokter0176', ['dokter'=>$dokter]);
     }
 
     /**
@@ -31,7 +31,7 @@ class DokterController extends Controller
      */
     public function create()
     {
-        //
+        return view('tb_dok0176');
     }
 
     /**
@@ -42,7 +42,14 @@ class DokterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nama = $request ->get('nama');
+        $jabatan = $request->get('jabatan');
+
+        $save_dok = new \App\Models\Dokter;
+        $save_dok->nama = $nama;
+        $save_dok->jabatan = $jabatan;
+        $save_dok->save();
+        return redirect()->route('dokter0176.index');
     }
 
     /**
@@ -64,7 +71,8 @@ class DokterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dok_edit = \App\Models\Dokter::All();
+        return view('edit_dok0176', ['dokter'=>$dok_edit]);
     }
 
     /**

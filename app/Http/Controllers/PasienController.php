@@ -16,12 +16,12 @@ class PasienController extends Controller
     public function index()
     {
         $pasien = \App\Models\pasien::All();
-        return view('pasien', ['pasien'=>$pasien]);
+        return view('pasien0176', ['pasien'=>$pasien]);
     }
     public function pasien()
     {
         $pasien = DB::table('pasien')->get();
-        return view('pasien', ['pasien'=>$pasien]);
+        return view('pasien0176', ['pasien'=>$pasien]);
     }
 
     /**
